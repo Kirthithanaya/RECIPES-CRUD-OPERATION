@@ -1,3 +1,14 @@
+
+# Crud Operation Using Nodejs and Expressjs
+
+# Sample api are given below in the documentation
+
+# https://documenter.getpostman.com/view/39326992/2sAYJAexdR
+
+
+
+
+
 # Recipes App
 
 A simple CRUD application to manage recipes built with Node.js, Express.js, and MongoDB (Mongoose).
@@ -22,3 +33,6 @@ A simple CRUD application to manage recipes built with Node.js, Express.js, and 
    .env
    MONGO_URI=<your_mongo_db_connection_string>
    PORT=5000
+
+
+
