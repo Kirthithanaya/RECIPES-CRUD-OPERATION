@@ -49,25 +49,25 @@ export const getRecipeByID = async (req, res) => {
 
 //Update Method
 export const updateRecipe = async (req, res) => {
-  try {
-    const recipeId = req.params.id;
-    const { name, procedure, ingredients, duration } = req.body;
-    const result = await recipes.findByIdAndUpdate(
-      { _id: recipeId },
-      { name, procedure, ingredients, duration },
-      { new: true }
-    );
-    if (result.matchedCount === 0) {
-      return res.status(404).json({ message: "Recipes Not Found" });
+    try {
+      const recipeId = req.params.id;
+      const { name, procedure, ingredients, duration } = req.body;
+      const result = await recipes.findByIdAndUpdate(
+        { _id: recipeId },
+        { name, procedure, ingredients, duration },
+        {new:true}
+      );
+      if (result.matchedCount === 0) {
+        return res.status(404).json({ message: "Recipes Not Found" });
+      }
+      
+      res.status(200).json({ message: "Rcipes Updated", data: result});
+    } catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
     }
-
-    res.status(200).json({ message: "Rcipes Updated", data: result });
-  } catch (error) {
-    res.status(500).json({
-      message: error.message,
-    });
-  }
-};
+  };
 
 //Delete Method
 export const deleterecipe = async (req, res) => {
